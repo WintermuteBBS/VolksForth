@@ -2011,7 +2011,7 @@ jump  ' >interpret !
 Defer  notfound
 
 : no.extensions  ( string -- )
- Error" Haeh?"   ;  \ string not 0
+ Error" Pardon?"   ;  \ string not 0
 
 ' no.extensions  Is  notfound
 
