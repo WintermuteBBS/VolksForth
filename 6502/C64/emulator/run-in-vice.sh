@@ -17,7 +17,7 @@ then
   autostart="-autostart ${emulatordir}/${executable}.T64"
 fi
 
-warp=""
+warp="+warp"
 if [ -n "${keybuf}" ]
 then
   # keybuf="${2}"
@@ -31,8 +31,8 @@ then
 fi
 
 "$VICE" \
-  -virtualdev \
-  +truedrive \
+  -virtualdev8 \
+  +drive8truedrive \
   -drive8type 1541 \
   -drive9type 1541 \
   -drive10type 1541 \
