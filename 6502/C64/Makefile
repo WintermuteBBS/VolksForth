@@ -5,7 +5,7 @@
 
 vf_blk_d64_files = $(wildcard disks/*.d64)
 vf_blk_fth_files = $(patsubst %.d64, %.fth, $(vf_blk_d64_files))
-vf_fth_files = $(wildcard src/vf-*.fth src/v4th*.fth)
+vf_fth_files = $(wildcard src/*.fth)
 vf_fth_files_petscii = $(patsubst src/%, cbmfiles/%, $(vf_fth_files))
 vf_flavours = \
     v4thblk-c64 v4thblk-c16+ v4thblk-c16- \
