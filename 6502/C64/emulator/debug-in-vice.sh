@@ -3,7 +3,7 @@
 # works which doesn't work if VICE runs in the background.
 set -e
 
-test -n "$VICE" || VICE=x64
+test -n "$VICE" || VICE=x64sc
 test -n "$DISK9" || DISK9=empty
 test -n "$DISK10" || DISK10=empty
 test -n "$DISK11" || DISK11=empty
