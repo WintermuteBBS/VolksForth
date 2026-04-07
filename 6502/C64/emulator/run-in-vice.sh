@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-test -n "$VICE" || VICE=x64
+test -n "$VICE" || VICE=x64sc
 test -n "$DISK9" || DISK9=empty
 test -n "$DISK10" || DISK10=empty
 test -n "$DISK11" || DISK11=empty
@@ -17,7 +17,7 @@ then
   autostart="-autostart ${emulatordir}/${executable}.T64"
 fi
 
-warp=""
+warp="+warp"
 if [ -n "${keybuf}" ]
 then
   # keybuf="${2}"
@@ -31,11 +31,14 @@ then
 fi
 
 "$VICE" \
-  -virtualdev \
-  +truedrive \
+  -trapdevice8 \
+  +drive8truedrive \
   -drive8type 1541 \
+  -drive9truedrive \
   -drive9type 1541 \
+  -drive10truedrive \
   -drive10type 1541 \
+  -drive11truedrive \
   -drive11type 1541 \
   -fs8 "${basedir}/cbmfiles" \
   -9 "${basedir}/disks/${DISK9}.d64" \
